@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <!-- Label for the Title of the App -->
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/appinfo"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:paddingBottom="50dp"/>
+
+    <!-- Frame Layout that will contain the Game Grid And Animation -->
+    <FrameLayout
+        android:id="@+id/gameContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Game Grid -->
+
+        <com.example.roberthurst.gametest.Game
+            android:id="@+id/gameView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        </com.example.roberthurst.gametest.Game>
+
+        <!--Animation Layer -->
+
+        <com.example.roberthurst.gametest.GridAnimation
+            android:id="@+id/gridAnim"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        </com.example.roberthurst.gametest.GridAnimation>
+    </FrameLayout>
+
+    <!-- Button that will create a new Game -->
+    <Button
+        android:id="@+id/btnNewGame"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="New Game"
+        android:background="@drawable/round"
+        android:textColor="#ffffff"/>
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=" ? "
+        android:background="@drawable/round"
+        android:textColor="#ffffff"
+        android:paddingTop="5dp"
+        android:id ="@+id/btnHelp"/>
+
+    <!--Linea Layout that contains the Lables for the score -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/score"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Best Score: "
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/tvBestScore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
+</LinearLayout>
+
